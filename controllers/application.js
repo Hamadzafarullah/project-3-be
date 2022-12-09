@@ -15,7 +15,15 @@ router.get('/', async (req, res) => {
 
 });
 
+router.get("/:id", async (req, res) => {
+  try {
 
+      res.json(await Travelapp.findById(req.params.id));
+    } catch (error) {
+
+      res.status(400).json(error);
+    }
+});
 
 
 module.exports = router
