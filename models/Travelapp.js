@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 
 const TravelappSchema = new Schema(
     {
- 
         location: String,
         cost: String,
         attractions: String,

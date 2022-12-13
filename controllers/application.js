@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 //create route
 router.post("/", async (req, res) => {
   try {
-
+   console.log(req.body);
     res.json(await Travelapp.create(req.body));
   } catch (error) {
     //send error
