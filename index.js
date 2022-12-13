@@ -4,17 +4,19 @@ const cors = require('cors')
 const data = require("./SampleData/location.json")
 const trackappController = require('./controllers/application.js');
 const app = express();
+
+
 app.set('port', process.env.PORT || 8000);
-
-
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 app.use(cors({
     origin: '*' ,
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
-app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+
+
 
 app.get("/", (req, res) => {
     //res.json let's us send a response as JSON data
