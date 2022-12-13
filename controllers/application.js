@@ -38,7 +38,7 @@ router.get("/:id", async (req, res) => {
 // Location UPDATE ROUTE
 router.put("/:id", async (req, res) => {
   try {
-    // update people by ID
+    // update location by ID
     res.json(
       await Travelapp.findByIdAndUpdate(req.params.id, req.body, { new: true })
     );
