@@ -8,10 +8,13 @@ app.set('port', process.env.PORT || 8000);
 
 
 app.use(express.json());
+app.use(cors({
+    origin: '*' ,
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json())
-app.use(cors())
 
 app.get("/", (req, res) => {
     //res.json let's us send a response as JSON data
