@@ -4,7 +4,7 @@ const cors = require('cors')
 const data = require("./SampleData/location.json")
 const trackappController = require('./controllers/application.js');
 const app = express();
-app.set('port', process.env.PORT || 8000);
+app.set('port', process.env.PORT || 8080);
 
 
 app.use(express.json());
@@ -28,11 +28,6 @@ app.use((err, req, res, next) => {
     const message = err.message || 'Internal Server Error'
     res.status(statusCode).send(message)
 })
-
-// app.get("/", (req, res) => {
-//     res.json(data);
-//   });
-
 
 app.listen(app.get('port'), () => {
 	console.log(`✅ PORT: ${app.get('port')} 🌟`);
